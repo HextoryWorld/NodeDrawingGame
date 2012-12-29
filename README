@@ -1,2 +1,27 @@
 NODEJS Drawing Game
-This file was modified by JetBrains PhpStorm 5.0.4 for binding GitHub repository
+
+
+TBD:
+----
+Publish on Heroku
+Mobile version (touch events)
+
+
+Ideas:
+------
+
+Add a button to change brush size
+Add a button to erase the draws
+Add a button to save the screen
+
+Add a button to add different colors
+Persistence
+
+
+
+Some example games about drawing:
+---------------------------------
+http://www.agame.com/game/paint-wars.html
+http://www.agame.com/game/scribble-2.html
+http://www.freewebarcade.com/game/trap-draw/
+http://www.freewebarcade.com/game/the-sketcher/

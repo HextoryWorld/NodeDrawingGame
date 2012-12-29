@@ -1,1 +1,1 @@
-web: node NodeJS\ Drawing\ Game/app.js
+web: node app.js
