@@ -17,7 +17,7 @@ var fileServer = new nstatic.Server('./');
 	
 // This is the port for our web server.
 // you will need to go to http://localhost:3000 to see it
-var port = process.env.PORT || 3000; // Cloud9 + Heroku || localhost
+var port = process.env.PORT || 80; // Cloud9 + Heroku || localhost
 app.listen(port);
 
 // If the URL of the socket server is opened in a browser
