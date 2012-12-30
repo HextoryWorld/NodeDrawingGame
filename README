@@ -4,12 +4,9 @@ NODEJS Drawing Game
 
 TBD:
 ----
-Publish on Heroku
-  -> Socket transport polling.
-  -> port configs
-http://stackoverflow.com/questions/10156372/socket-io-not-working-on-heroku
 Mobile version (touch events)
-
+Choose if local o network.
+Canvas width and height depending client
 
 Ideas:
 ------
@@ -19,7 +16,6 @@ Add a button to erase the draws
 Add a button to save the screen
 
 Add a button to add different colors
-Persistence
 
 
 

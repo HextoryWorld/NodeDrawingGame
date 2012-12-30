@@ -66,8 +66,46 @@ jQuery(function(){
 	});
 
 	var prev = {};
-	
-	canvas.on('mousedown',function(e){
+
+    // To manage touch events
+    // http://ross.posterous.com/2008/08/19/iphone-touch-events-in-javascript/
+
+    document.addEventListener("touchstart", touchHandler, true);
+    document.addEventListener("touchmove", touchHandler, true);
+    document.addEventListener("touchend", touchHandler, true);
+    document.addEventListener("touchcancel", touchHandler, true);
+
+    function touchHandler(event)
+    {
+        var touches = event.changedTouches,
+            first = touches[0],
+            type = '';
+        switch(event.type)
+        {
+            case "touchstart":
+                type = "mousedown";
+                break;
+            case "touchmove":
+                type = "mousemove";
+                break;
+            case "touchend":
+                type = "mouseup";
+                break;
+            default:
+                return;
+        }
+
+        var simulatedEvent = document.createEvent("MouseEvent");
+        simulatedEvent.initMouseEvent(type, true, true, window, 1,
+            first.screenX, first.screenY,
+            first.clientX, first.clientY, false,
+            false, false, false, 0/*left*/, null);
+
+        first.target.dispatchEvent(simulatedEvent);
+        event.preventDefault();
+    }
+
+	canvas.on('mousedown', function(e){
 		e.preventDefault();
 		drawing = true;
 		prev.x = e.pageX;
@@ -77,13 +115,13 @@ jQuery(function(){
 		instructions.fadeOut();
 	});
 	
-	doc.bind('mouseup mouseleave',function(){
+	doc.bind('mouseup mouseleave', function(){
 		drawing = false;
 	});
 
 	var lastEmit = jQuery.now();
 
-	doc.on('mousemove',function(e){
+	doc.on('mousemove', function(e){
 		if(jQuery.now() - lastEmit > 30){
 			socket.emit('mousemove',{
 				'x': e.pageX,

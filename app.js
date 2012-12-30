@@ -31,7 +31,7 @@ function handler (request, response) {
 io.set('log level', 1);
 
 // Heroku doesn't support websockets so...
-// i detect if i am  on heroku via config vars
+// Detect if heroku via config vars
 // https://devcenter.heroku.com/articles/config-vars
 // heroku config:add HEROKU=true --app node-drawing-game
 if (process.env.HEROKU === 'true') {
