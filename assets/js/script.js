@@ -96,6 +96,9 @@ jQuery(function(){
             case "touchend":
                 type = "mouseup";
                 break;
+            case "touchcancel":
+                type = "mouseup";
+                break;
             default:
                 return;
         }
@@ -109,10 +112,6 @@ jQuery(function(){
         first.target.dispatchEvent(simulatedEvent);
         event.preventDefault();
     }
-
-    canvas.on('click', function(e){
-        e.preventDefault();
-    });
 
 	canvas.on('mousedown', function(e){
 		e.preventDefault();
