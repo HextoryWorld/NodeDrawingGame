@@ -15,6 +15,11 @@ jQuery(function(){
 		ctx = canvas[0].getContext('2d'),
 		instructions = jQuery('#instructions');
 
+    // Force canvas to dynamically change its size to the same width/height
+    // as the browser window.
+    canvas[0].width = document.body.clientWidth;
+    canvas[0].height = document.body.clientHeight;
+
     // ctx setup
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
@@ -104,6 +109,10 @@ jQuery(function(){
         first.target.dispatchEvent(simulatedEvent);
         event.preventDefault();
     }
+
+    canvas.on('click', function(e){
+        e.preventDefault();
+    });
 
 	canvas.on('mousedown', function(e){
 		e.preventDefault();
