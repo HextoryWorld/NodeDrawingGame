@@ -1,6 +1,10 @@
 // Based on the tutorial:
 // http://tutorialzine.com/2012/08/nodejs-drawing-game/
 
+//Restrictions on HEROKU:
+// Doesn't support node 0.8
+// Doesn't support websocekts.
+
 // Including libraries
 
 var app = require('http').createServer(handler),
