@@ -5,6 +5,9 @@ NODEJS Drawing Game
 TBD:
 ----
 Publish on Heroku
+  -> Socket transport polling.
+  -> port configs
+http://stackoverflow.com/questions/10156372/socket-io-not-working-on-heroku
 Mobile version (touch events)
 
 
