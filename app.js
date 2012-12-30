@@ -2,7 +2,7 @@
 // http://tutorialzine.com/2012/08/nodejs-drawing-game/
 
 //Restrictions on HEROKU:
-// Doesn't support node 0.8
+// Doesn't support installing dependencies with npm with node 0.8
 // Doesn't support websocekts.
 
 // Including libraries
